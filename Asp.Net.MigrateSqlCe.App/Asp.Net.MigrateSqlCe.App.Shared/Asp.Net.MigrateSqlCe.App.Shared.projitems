@@ -6,7 +6,7 @@
     <SharedGUID>6a67abaf-285c-4d14-8978-68d08642c97f</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Asp.Net.MigrateSqlCe.App</Import_RootNamespace>
+    <Import_RootNamespace>AspNet.MigrateSqlCe.App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -15,7 +15,39 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)BindableBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DbHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MigrateDbPage.xaml.cs">
+      <DependentUpon>MigrateDbPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Account.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Category.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DbMigrationResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Group.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Image.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Transaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Transfer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SQLite\SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SQLite\SQLiteAsync.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)MigrateDbPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)SqlCe\Checkbook.sdf" />
+    <Content Include="$(MSBuildThisFileDirectory)SqlCe\SampleMigratedSdf.json" />
   </ItemGroup>
 </Project>

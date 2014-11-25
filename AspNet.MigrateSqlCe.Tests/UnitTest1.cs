@@ -14,7 +14,7 @@ namespace AspNet.MigrateSqlCe.Tests
         [TestMethod]
         public async Task MigrateCbmDatabaseTest()
         {
-            var client = new RestClient("http://localhost:62376/");
+            var client = new RestClient("http://sqlcemigration.azurewebsites.net/");
             var request = new RestRequest("api/sqlcemigration/", Method.POST);
 
             var assemblyFileInfo = new FileInfo(Assembly.GetExecutingAssembly().Location);

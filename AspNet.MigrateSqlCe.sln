@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.MigrateSqlCe.Tests",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asp.Net.MigrateSqlCe.App", "Asp.Net.MigrateSqlCe.App", "{C62A5F63-8602-4F29-96ED-C10221278604}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Asp.Net.MigrateSqlCe.App.Shared", "Asp.Net.MigrateSqlCe.App\Asp.Net.MigrateSqlCe.App.Shared\Asp.Net.MigrateSqlCe.App.Shared.shproj", "{6A67ABAF-285C-4D14-8978-68D08642C97F}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AspNet.MigrateSqlCe.App.Shared", "Asp.Net.MigrateSqlCe.App\Asp.Net.MigrateSqlCe.App.Shared\AspNet.MigrateSqlCe.App.Shared.shproj", "{6A67ABAF-285C-4D14-8978-68D08642C97F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.MigrateSqlCe.App.Windows", "Asp.Net.MigrateSqlCe.App\Asp.Net.MigrateSqlCe.App.Windows\Asp.Net.MigrateSqlCe.App.Windows.csproj", "{417F0A59-EAB4-43E8-9414-E70129EF53C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.MigrateSqlCe.App.WindowsPhone", "Asp.Net.MigrateSqlCe.App\Asp.Net.MigrateSqlCe.App.WindowsPhone\Asp.Net.MigrateSqlCe.App.WindowsPhone.csproj", "{5C906848-539D-4373-9445-E8F9FF33BB8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.MigrateSqlCe.App.WindowsPhone", "Asp.Net.MigrateSqlCe.App\Asp.Net.MigrateSqlCe.App.WindowsPhone\AspNet.MigrateSqlCe.App.WindowsPhone.csproj", "{5C906848-539D-4373-9445-E8F9FF33BB8B}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

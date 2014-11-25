@@ -7,8 +7,8 @@
     <ProjectGuid>{5C906848-539D-4373-9445-E8F9FF33BB8B}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Asp.Net.MigrateSqlCe.App</RootNamespace>
-    <AssemblyName>Asp.Net.MigrateSqlCe.App.WindowsPhone</AssemblyName>
+    <RootNamespace>AspNet.MigrateSqlCe.App</RootNamespace>
+    <AssemblyName>AspNet.MigrateSqlCe.App.WindowsPhone</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
@@ -81,6 +81,9 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
+      <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
     </SDKReference>
@@ -89,9 +92,6 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,13 +108,12 @@
     <Content Include="Assets\WideLogo.scale-240.png" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

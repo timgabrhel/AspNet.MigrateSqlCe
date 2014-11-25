@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -18,7 +19,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
-namespace Asp.Net.MigrateSqlCe.App
+namespace AspNet.MigrateSqlCe.App
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -45,7 +46,7 @@ namespace Asp.Net.MigrateSqlCe.App
         /// search results, and so forth.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -91,11 +92,16 @@ namespace Asp.Net.MigrateSqlCe.App
                 rootFrame.ContentTransitions = null;
                 rootFrame.Navigated += this.RootFrame_FirstNavigated;
 #endif
+                // check to see if the new SQLite database was created
+                var dbExists = await DbHelper.DoesDbExist();
+
+                // if the database wasn't created, navigate to the migration page.
+                Type navigatePageType = (dbExists == false) ? typeof(MigrateDbPage) : typeof(MainPage);
 
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
+                if (!rootFrame.Navigate(navigatePageType, e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
                 }
